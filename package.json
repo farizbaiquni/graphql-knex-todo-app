@@ -1,0 +1,21 @@
+{
+  "name": "graphql-todo-list",
+  "version": "1.0.0",
+  "description": "belajar membuat graphql untuk todo list app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "graphql"
+  ],
+  "author": "Muhammad Fariz Baiquni",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^16.5.0",
+    "knex": "^2.1.0",
+    "mysql": "^2.18.1"
+  }
+}
