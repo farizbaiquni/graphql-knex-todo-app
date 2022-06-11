@@ -2,8 +2,10 @@
   "name": "graphql-todo-list",
   "version": "1.0.0",
   "description": "belajar membuat graphql untuk todo list app",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
+    "start": "nodemon ./dist/index.ts",
+    "dev": "nodemon ./src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
