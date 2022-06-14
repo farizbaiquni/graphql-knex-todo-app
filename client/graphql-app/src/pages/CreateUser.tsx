@@ -1,0 +1,69 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import * as ROUTES from "../constants/routes";
+
+function CreateUser() {
+  const navigate = useNavigate();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [address, setAddress] = useState("");
+  const [phone, setPhone] = useState("");
+  return (
+    <div className=" h-screen flex flex-col items-center justify-center">
+      <form action="" className=" w-[500px] border border-slate-500 p-7">
+        <div className=" w-full flex justify-start">
+          <button
+            type="button"
+            onClick={() => navigate(ROUTES.home)}
+            className=" mb-9 text-blue-600 font-semibold"
+          >
+            Back to main page
+          </button>
+        </div>
+        <div className=" relative ">
+          <input
+            type="text"
+            id="simple-email"
+            className=" flex-1 appearance-none border mb-5 border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-1 focus:ring-slate-700 focus:border-transparent"
+            placeholder="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <input
+            type="text"
+            id="simple-email"
+            className=" flex-1 appearance-none border mb-5 border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-1 focus:ring-slate-700 focus:border-transparent"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="text"
+            id="simple-email"
+            className=" flex-1 appearance-none border mb-5 border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-1 focus:ring-slate-700 focus:border-transparent"
+            placeholder="Address"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+          />
+          <input
+            type="number"
+            id="simple-email"
+            className=" flex-1 appearance-none border mb-5 border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-1 focus:ring-slate-700 focus:border-transparent"
+            placeholder="Phone"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+          />
+        </div>
+
+        <button
+          type="submit"
+          className="py-2 px-4  bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
+        >
+          CREATE USER
+        </button>
+      </form>
+    </div>
+  );
+}
+
+export default CreateUser;

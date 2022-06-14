@@ -1,8 +1,9 @@
+import 'dotenv/config'
 import express from 'express'
 import { graphqlHTTP } from "express-graphql";
 import cors from 'cors'
 import { schema } from './Schema';
-const PORT = 3005 
+const PORT = process.env.PORT || "3001" 
 
 const main = async () => {
 
@@ -16,7 +17,7 @@ const main = async () => {
     }))
 
     app.listen(PORT, () => {
-        console.log("Server running...")
+        console.log(`Server running... on port ${PORT}`)
     })
 }
 
