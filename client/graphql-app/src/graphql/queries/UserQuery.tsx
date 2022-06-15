@@ -12,4 +12,16 @@ const GET_ALL_USERS = gql`
   }
 `;
 
-export default GET_ALL_USERS;
+const GET_TODOS_BY_ID = gql`
+  query getTodosById($id: String!) {
+    getTodosById(id: $id) {
+      id
+      title
+      body
+      updated_at
+      created_at
+    }
+  }
+`;
+
+export { GET_ALL_USERS, GET_TODOS_BY_ID };

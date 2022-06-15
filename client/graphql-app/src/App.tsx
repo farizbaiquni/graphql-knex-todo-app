@@ -4,6 +4,7 @@ import "./App.css";
 import CreateUser from "./pages/CreateUser";
 import Users from "./pages/Users";
 import * as ROUTES from "./constants/routes";
+import Todos from "./pages/Todos";
 
 function App() {
   const client = new ApolloClient({
@@ -18,6 +19,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Users />} />
             <Route path={ROUTES.createUser} element={<CreateUser />} />
+            <Route path={ROUTES.todos} element={<Todos />} />
           </Routes>
         </BrowserRouter>
       </ApolloProvider>
