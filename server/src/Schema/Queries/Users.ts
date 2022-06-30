@@ -15,10 +15,23 @@ export const GET_TODOS_BY_ID = {
     args: {
         id: {type: GraphQLString}
     },
-    resolve: (parent: any, args: any) => {
+    resolve: async(parent: any, args: any) => {
         const { id } = args;
-        return dbConn.select().from('todos').where({
+        return await dbConn.select().from('todos').where({
             user_id: id
         }).then( data => data)
+    }
+}
+
+export const GET_USER_BY_ID = {
+    type: UserType,
+    args: {
+        id: {type: GraphQLString}
+    },
+    resolve: async(parent: any, args: any) => {
+        const { id } = args;
+        return await dbConn.select().from('users').where({
+            id: id
+        }).then( data => { return data[0]})
     }
 }
