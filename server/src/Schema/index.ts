@@ -1,6 +1,8 @@
 import { GraphQLObjectType, GraphQLSchema } from "graphql"
 import { CREATE_USER } from "./Mutations/Users"
-import { GET_ALL_USERS, GET_TODOS_BY_ID, GET_USER_BY_ID } from "./Queries/Users"
+import { GET_ALL_USERS, GET_USER_BY_ID } from "./Queries/Users"
+import { GET_TODOS_BY_ID } from "./Queries/Todos"
+import { UPDATE_TODO_BY_ID } from "./Mutations/Todos"
 
 const RootQuery = new GraphQLObjectType({
     name: 'RootQuery',
@@ -14,7 +16,8 @@ const RootQuery = new GraphQLObjectType({
 const Mutation = new GraphQLObjectType({
     name: 'Mutation',
     fields: {
-        createUser: CREATE_USER
+        createUser: CREATE_USER,
+        updateTodoById: UPDATE_TODO_BY_ID
     }
 })
 
